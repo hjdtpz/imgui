@@ -24,7 +24,16 @@ project "ImGui"
 	filter "system:windows"
         systemversion "latest"
         cppdialect "C++17"
-
-	filter { "system:windows", "configurations:Release" }
-	    runtime "Release"
+		
+	filter "configurations:Debug"
+		runtime "Debug"
+		symbols "on"
+		
+    filter "configurations:Release"
+        runtime "Release"
+        optimize "on"
+        
+    filter "configurations:Dist"
+        runtime "Release"
+        optimize "on"
        
